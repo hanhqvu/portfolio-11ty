@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     './node_modules/alpinejs/dist/cdn.js': './js/alpine.js',
   });
+  eleventyConfig.addPassthroughCopy('assets');
   eleventyConfig.addWatchTarget('./public/css/');
   eleventyConfig.addPlugin(pluginTailwindCSS, {
     src: 'src/css/style.css',
