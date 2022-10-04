@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="./js/alpine.js"></script>
+    <title>Hanh Vu's Homepage</title>
+  </head>
+  <body>
+    <header class="px-2 md:px-0 bg-slate-100 dark:bg-slate-500">
+      <div
+        class="container my-0 mx-auto flex flex-row items-center justify-between py-1"
+      >
+        <h1 class="text-3xl">Hanh Vu</h1>
+        {% include "../components/Navbar.html" %}
+      </div>
+    </header>
+    <main class="bg-slate-100 dark:bg-slate-500">
+      <div class="container my-0 mx-auto">{{ content }}</div>
+    </main>
+  </body>
+</html>

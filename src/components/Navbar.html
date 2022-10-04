@@ -1,0 +1,56 @@
+<div
+  x-data="{ showMenu: false, 
+            dark: window.matchMedia('(prefers-color-scheme: dark)').matches }"
+  class="flex flex-row"
+>
+  <nav
+    x-transition
+    :class="showMenu ? 'show' : 'hidden'"
+    class="absolute top-14 bg-slate-200 dark:bg-slate-400 rounded-md md:relative md:inline md:top-0 md:bg-inherit md:rounded-none md:dark:bg-inherit"
+  >
+    <ul class="flex flex-col py-1 md:flex-row">
+      <li class="px-4 py-2">
+        <a href="#work">Work</a>
+      </li>
+      <li class="px-4 py-2">
+        <a href="#about">About</a>
+      </li>
+    </ul>
+  </nav>
+  <button
+    class="p-2 rounded-md md:py-0"
+    @click="toggleTheme();
+            dark = !dark"
+    :class="!dark ? 'bg-gray-400' : 'bg-yellow-400'"
+  >
+    <span x-show="dark" x-transition.1500ms> {% feather "sun" %} </span>
+    <span x-show="!dark" x-transition.1500ms> {% feather "moon" %} </span>
+  </button>
+  <button
+    @click="showMenu = !showMenu"
+    class="md:hidden ml-2"
+    role="menu"
+    aria-orientation="vertical"
+    aria-labelledby="menu-button"
+  >
+    {% feather "menu" %}
+  </button>
+</div>
+
+<script>
+  function setDefaultTheme() {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }
+
+  function toggleTheme() {
+    if (!document.body.classList.contains('dark')) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }
+</script>
