@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.project-card {
+  @apply flex flex-col m-5 items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-4xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-2;
+}
+
 .typewriter h2 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid orange; /* The typwriter cursor */
