@@ -22,7 +22,7 @@ section h2 {
   @apply text-2xl text-black dark:text-white;
 }
 
-.typewriter h2 {
+.typewriter {
   color: black;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid orange; /* The typwriter cursor */
