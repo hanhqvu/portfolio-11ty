@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+article p {
+  @apply text-black dark:text-gray-400;
+}
+
 .project-card {
   @apply flex flex-col m-5 items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-4xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-2;
 }
@@ -14,7 +18,12 @@
   @apply w-fit text-white bg-purple-500 hover:bg-purple-700 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-800 dark:focus:ring-purple-400 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2;
 }
 
+section h2 {
+  @apply text-2xl text-black dark:text-white;
+}
+
 .typewriter h2 {
+  color: black;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
