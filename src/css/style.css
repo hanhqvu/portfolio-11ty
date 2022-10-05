@@ -11,7 +11,7 @@ article p {
 }
 
 .project-card {
-  @apply flex flex-col m-5 items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-4xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-2;
+  @apply flex flex-col my-2 lg:m-5 items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-4xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-2;
 }
 
 .project-btn {
@@ -19,14 +19,14 @@ article p {
 }
 
 section h2 {
-  @apply text-2xl text-black dark:text-white;
+  @apply text-2xl md:text-3xl lg:text-4xl text-black dark:text-white;
 }
 
 .typewriter {
   color: black;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
+  white-space: wrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em; /* Adjust as needed */
   animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
