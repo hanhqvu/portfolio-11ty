@@ -9,16 +9,14 @@
     <title>Hanh Vu's Homepage</title>
   </head>
   <body>
-    <header class="px-2 md:px-0 bg-slate-100 dark:bg-slate-500">
-      <div
-        class="container my-0 mx-auto flex flex-row items-center justify-between py-1"
-      >
+    <header class="px-2 md:px-10 bg-slate-100 dark:bg-slate-500">
+      <div class="container my-0 mx-auto flex flex-row items-center justify-between py-1">
         <h1 class="text-3xl">Hanh Vu</h1>
         {% include "../components/Navbar.html" %}
       </div>
     </header>
     <main class="bg-slate-100 dark:bg-slate-500">
-      <div class="container my-0 mx-auto">{{ content }}</div>
+      <div class="container my-0 mx-auto px-2 md:px-10">{{ content }}</div>
     </main>
   </body>
 </html>
