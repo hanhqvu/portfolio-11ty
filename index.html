@@ -1,7 +1,63 @@
----
-layout: base.liquid
----
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+    <script defer src="./js/alpine.js"></script>
+    <title>Hanh Vu's Homepage</title>
+  </head>
+  <body>
+    <header class="px-2 md:px-10 bg-slate-100 dark:bg-slate-500">
+      <div class="container my-0 mx-auto flex flex-row items-center justify-between py-1">
+        <h1 class="text-3xl">Hanh Vu</h1>
+        <div
+          x-data="{ showMenu: false, 
+            dark: window.matchMedia('(prefers-color-scheme: dark)').matches }"
+          class="flex flex-row"
+        >
+          <nav
+            x-transition
+            :class="showMenu ? 'show' : 'hidden'"
+            class="absolute top-14 right-2 bg-slate-200 dark:bg-slate-400 rounded-md md:relative md:inline md:top-0 md:bg-inherit md:rounded-none md:dark:bg-inherit"
+          >
+            <ul class="flex flex-col py-1 md:flex-row">
+              <li class="px-4 py-2">
+                <a href="#projects">Projects</a>
+              </li>
+              <li class="px-4 py-2">
+                <a href="#about">About</a>
+              </li>
+            </ul>
+          </nav>
+          <button
+            class="p-2 rounded-md md:py-0"
+            @click="toggleTheme();
+            dark = !dark"
+            :class="!dark ? 'bg-gray-400' : 'bg-yellow-400'"
+          >
+            <span x-show="dark" x-transition.1500ms> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun feather-x"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg> </span>
+            <span x-show="!dark" x-transition.1500ms> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon feather-x"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </span>
+          </button>
+          <button
+            @click="showMenu = !showMenu"
+            class="md:hidden ml-2"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="menu-button"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu feather-x"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="bg-slate-100 dark:bg-gray-600 p-2 md:p-8 lg:p-16">
+      <div class="container my-0 mx-auto px-2 md:px-10">
 <section>
   <div class="h-96 lg:h-screen flex flex-col justify-center items-center">
     <div class="text-2xl md:text-4xl lg:text-6xl text-black dark:text-white">
@@ -32,11 +88,11 @@ layout: base.liquid
         </p>
         <div class="flex flex-row">
           <button type="button" class="project-btn">
-            {% feather "github" %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github feather-x"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             <a href="https://github.com/hanhqvu/tabekon-react-native" class="ml-2"> Github</a>
           </button>
           <button type="button" class="project-btn">
-            {% feather "video" %} <span class="ml-2"> Demo</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video feather-x"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg> <span class="ml-2"> Demo</span>
           </button>
         </div>
       </div>
@@ -61,11 +117,11 @@ layout: base.liquid
         </p>
         <div class="flex flex-row">
           <button type="button" class="project-btn">
-            {% feather "github" %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github feather-x"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             <a href="https://github.com/hanhqvu/watch-reader" class="ml-2"> Github</a>
           </button>
           <button type="button" class="project-btn">
-            {% feather "video" %} <span class="ml-2"> Demo</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video feather-x"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg> <span class="ml-2"> Demo</span>
           </button>
         </div>
       </div>
@@ -90,11 +146,11 @@ layout: base.liquid
         </p>
         <div class="flex flex-row">
           <button type="button" class="project-btn">
-            {% feather "github" %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github feather-x"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             <a href="https://github.com/Team-Tomodachi/README" class="ml-2"> Github</a>
           </button>
           <button type="button" class="project-btn">
-            {% feather "video" %} <span class="ml-2"> Demo</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video feather-x"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg> <span class="ml-2"> Demo</span>
           </button>
         </div>
       </div>
@@ -278,3 +334,24 @@ layout: base.liquid
     </div>
   </div>
 </section>
+</div>
+    </main>
+  </body>
+  <script>
+    function setDefaultTheme() {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+      }
+    }
+
+    function toggleTheme() {
+      if (!document.body.classList.contains('dark')) {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+      }
+    }
+  </script>
+</html>
