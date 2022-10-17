@@ -21,6 +21,7 @@ git clone git@github.com:hanhqvu/portfolio-11ty.git
 - Tailwind CSS is used for styling
 - Alpine JS is used for simple programmatic UI.
 - Feather and Devicons provide icons
+- Github Actions is setup to serve the website through Github Pages
 
 # License
 - This project uses the following license: MIT
